@@ -41,8 +41,8 @@ namespace WindowsFormsBoat
         // Признак наличия якоря
         public bool Anchor { private set; get; }
 
-        // Признак наличия флага
-        public bool Flag { private set; get; }
+        // Признак наличия паруса
+        public bool Sail { private set; get; }
 
         // Признак наличия задней части корабля
         public bool Back { private set; get; }
@@ -50,7 +50,7 @@ namespace WindowsFormsBoat
 
         /// Инициализация свойств
         public void Init(int maxSpeed, float weight, Color mainColor, Color secondaryColor,
-       bool front, bool anchor, bool flag, bool back)
+       bool front, bool anchor, bool sail, bool back)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
@@ -58,7 +58,7 @@ namespace WindowsFormsBoat
             SecondaryColor = secondaryColor;
             Front = front;
             Anchor = anchor;
-            Flag = flag;
+            Sail = sail;
             Back = back;
         }
 
@@ -177,7 +177,7 @@ namespace WindowsFormsBoat
             }
 
             // Флаг
-            if (Flag)
+            if (Sail)
             {
                 g.FillEllipse(new SolidBrush(MainColor), _startPosX + 80, _startPosY + 10, 20, 20);
                 g.FillEllipse(new SolidBrush(MainColor), _startPosX + 10, _startPosY + 10, 20, 20);
