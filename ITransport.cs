@@ -1,11 +1,9 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Drawing;
 
 namespace WindowsFormsBoat
 {
     // Интерфейс "Транспорт"
-    interface ITransport
+    public interface ITransport
     {
         // Установка позиции
         void SetPosition(int x, int y, int width, int height);

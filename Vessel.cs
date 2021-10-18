@@ -1,13 +1,11 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Drawing;
 
 namespace WindowsFormsBoat
 {
     // Абстрактный класс "Судно"
     public abstract class Vessel : ITransport
-    {
-        // Левая координата отрисовки
+    { 
+        // Левая координата отрисовки 
         protected float _startPosX;
 
         // Правая координата отрисовки

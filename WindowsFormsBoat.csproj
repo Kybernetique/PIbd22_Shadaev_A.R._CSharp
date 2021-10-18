@@ -47,6 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boat.cs" />
+    <Compile Include="FormHarbor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHarbor.Designer.cs">
+      <DependentUpon>FormHarbor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Harbor.cs" />
     <Compile Include="SailBoat.cs" />
     <Compile Include="enum.cs" />
     <Compile Include="FormVessel.cs">
@@ -61,6 +68,9 @@
     <Compile Include="Vessel.cs" />
     <EmbeddedResource Include="FormVessel.resx">
       <DependentUpon>FormVessel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHarbor.resx">
+      <DependentUpon>FormHarbor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

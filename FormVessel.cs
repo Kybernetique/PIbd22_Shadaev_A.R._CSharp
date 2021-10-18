@@ -14,7 +14,14 @@ namespace WindowsFormsBoat
             InitializeComponent();
         }
 
-        // Метод отрисовки судна
+        // Передача корабля на форму
+        public void SetBoat(ITransport boat)
+        {
+            this.boat = boat;
+            Draw();
+        }
+
+        // Метод отрисовки корабля
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxBoats.Width, pictureBoxBoats.Height);
@@ -23,29 +30,20 @@ namespace WindowsFormsBoat
             pictureBoxBoats.Image = bmp;
         }
 
-        // Обработка нажатия кнопки "Boat"
+        // Кнопка создания лодки
         private void buttonCreateBoat_Click(object sender, EventArgs e)
-        { 
+        {
             Random rnd = new Random();
             boat = new Boat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Khaki);
+            //boat.Init(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Khaki, Color.DeepSkyBlue, true, true, true, true);
             boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoats.Width, pictureBoxBoats.Height);
             Draw();
         }
 
-        // Обработка нажатия кнопки "Sailboat"
-        private void buttonCreateSailboat_Click(object sender, EventArgs e)
-        {
-            Random rnd = new Random();
-            boat = new SailBoat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Khaki, Color.DeepSkyBlue, true, true, true, true);
-            boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoats.Width,
-           pictureBoxBoats.Height);
-            Draw();
-        }
-
-        // Обработка нажатия кнопок перемещения
+        // Кнопка движения корабля
         private void buttonMove_Click(object sender, EventArgs e)
         {
-            // Получаем имя кнопки
+            // получаем имя кнопки
             string name = (sender as Button).Name;
             switch (name)
             {
@@ -62,6 +60,16 @@ namespace WindowsFormsBoat
                     boat.MoveTransport(Direction.Right);
                     break;
             }
+            Draw();
+        }
+
+        // Кнопка создания парусника
+        private void buttonCreateSailboat_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            boat = new SailBoat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Khaki, Color.DeepSkyBlue, true, true, true, true);
+            boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoats.Width,
+           pictureBoxBoats.Height);
             Draw();
         }
     }

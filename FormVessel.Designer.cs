@@ -120,7 +120,7 @@
             // buttonCreateSailboat
             // 
             this.buttonCreateSailboat.Location = new System.Drawing.Point(91, 12);
-            this.buttonCreateSailboat.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCreateSailboat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCreateSailboat.Name = "buttonCreateSailboat";
             this.buttonCreateSailboat.Size = new System.Drawing.Size(86, 23);
             this.buttonCreateSailboat.TabIndex = 7;
