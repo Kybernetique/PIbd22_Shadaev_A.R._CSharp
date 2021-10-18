@@ -47,17 +47,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boat.cs" />
+    <Compile Include="SailBoat.cs" />
     <Compile Include="enum.cs" />
-    <Compile Include="FormBoat.cs">
+    <Compile Include="FormVessel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBoat.Designer.cs">
-      <DependentUpon>FormBoat.cs</DependentUpon>
+    <Compile Include="FormVessel.Designer.cs">
+      <DependentUpon>FormVessel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ITransport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormBoat.resx">
-      <DependentUpon>FormBoat.cs</DependentUpon>
+    <Compile Include="Vessel.cs" />
+    <EmbeddedResource Include="FormVessel.resx">
+      <DependentUpon>FormVessel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
