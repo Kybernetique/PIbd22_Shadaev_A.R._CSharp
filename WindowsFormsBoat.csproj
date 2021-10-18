@@ -54,6 +54,7 @@
       <DependentUpon>FormHarbor.cs</DependentUpon>
     </Compile>
     <Compile Include="Harbor.cs" />
+    <Compile Include="HarborCollection.cs" />
     <Compile Include="SailBoat.cs" />
     <Compile Include="enum.cs" />
     <Compile Include="FormVessel.cs">
