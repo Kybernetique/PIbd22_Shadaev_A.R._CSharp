@@ -3,7 +3,7 @@
 namespace WindowsFormsBoat
 {
     // Класс "Лодка"
-    public class Boat : Vessel
+    public class Boat : Transport
     {
         // Ширина отрисовки лодки
         protected readonly int boatWidth = 200;
