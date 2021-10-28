@@ -2,7 +2,7 @@
 
 namespace WindowsFormsBoat
 {
-    // Абстрактный класс "Судно"
+    // Абстрактный класс "Транспорт"
     public abstract class Transport : ITransport
     { 
         // Левая координата отрисовки 
