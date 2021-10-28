@@ -38,3 +38,13 @@ C:\Users\Tony\YandexDisk\TECH\2\Tech\lab1\WindowsFormsBoat\obj\Debug\WindowsForm
 C:\Users\Tony\YandexDisk\TECH\2\Tech\lab1\WindowsFormsBoat\obj\Debug\WindowsFormsBoat.csproj.CoreCompileInputs.cache
 C:\Users\Tony\YandexDisk\TECH\2\Tech\lab1\WindowsFormsBoat\obj\Debug\WindowsFormsBoat.exe
 C:\Users\Tony\YandexDisk\TECH\2\Tech\lab1\WindowsFormsBoat\obj\Debug\WindowsFormsBoat.pdb
+C:\Users\Tony\Downloads\New folder (4)\PIbd22_Shadaev_A.R._CSharp\bin\Debug\WindowsFormsBoat.exe.config
+C:\Users\Tony\Downloads\New folder (4)\PIbd22_Shadaev_A.R._CSharp\bin\Debug\WindowsFormsBoat.exe
+C:\Users\Tony\Downloads\New folder (4)\PIbd22_Shadaev_A.R._CSharp\bin\Debug\WindowsFormsBoat.pdb
+C:\Users\Tony\Downloads\New folder (4)\PIbd22_Shadaev_A.R._CSharp\obj\Debug\WindowsFormsBoat.csprojAssemblyReference.cache
+C:\Users\Tony\Downloads\New folder (4)\PIbd22_Shadaev_A.R._CSharp\obj\Debug\WindowsFormsBoat.FormBoat.resources
+C:\Users\Tony\Downloads\New folder (4)\PIbd22_Shadaev_A.R._CSharp\obj\Debug\WindowsFormsBoat.Properties.Resources.resources
+C:\Users\Tony\Downloads\New folder (4)\PIbd22_Shadaev_A.R._CSharp\obj\Debug\WindowsFormsBoat.csproj.GenerateResource.cache
+C:\Users\Tony\Downloads\New folder (4)\PIbd22_Shadaev_A.R._CSharp\obj\Debug\WindowsFormsBoat.csproj.CoreCompileInputs.cache
+C:\Users\Tony\Downloads\New folder (4)\PIbd22_Shadaev_A.R._CSharp\obj\Debug\WindowsFormsBoat.exe
+C:\Users\Tony\Downloads\New folder (4)\PIbd22_Shadaev_A.R._CSharp\obj\Debug\WindowsFormsBoat.pdb
