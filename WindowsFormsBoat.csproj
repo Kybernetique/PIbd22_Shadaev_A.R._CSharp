@@ -55,7 +55,7 @@
     </Compile>
     <Compile Include="Harbor.cs" />
     <Compile Include="SailBoat.cs" />
-    <Compile Include="enum.cs" />
+    <Compile Include="Direction.cs" />
     <Compile Include="FormVessel.cs">
       <SubType>Form</SubType>
     </Compile>
