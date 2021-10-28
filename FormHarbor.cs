@@ -46,7 +46,9 @@ namespace WindowsFormsBoat
                 // Если выбран один из пуктов в listBox (при старте программы ни один пункт не будет выбран и может возникнуть ошибка, если мы попытаемся обратиться к элементу listBox)
                 Bitmap bmp = new Bitmap(pictureBoxHarbor.Width, pictureBoxHarbor.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                harborCollection[listBoxHarbors.SelectedItem.ToString()].Draw(gr);
+                if (listBoxHarbors.SelectedIndex > -1) // added
+                    harborCollection[listBoxHarbors.SelectedItem.ToString()].Draw(gr);
+
                 pictureBoxHarbor.Image = bmp;
             }
         }
@@ -130,7 +132,6 @@ namespace WindowsFormsBoat
                 {
                     FormVessel form = new FormVessel();
                     form.SetBoat(boat);
-
                     form.ShowDialog();
                 }
                 Draw();
@@ -143,5 +144,26 @@ namespace WindowsFormsBoat
             Draw();
         }
 
+        private void AddBoat(Transport boat)
+        {
+            if (boat != null && listBoxHarbors.SelectedIndex > -1)
+            {
+                if ((harborCollection[listBoxHarbors.SelectedItem.ToString()] + boat) > -1)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Harbor is full!");
+                }
+            }
+        }
+
+        private void buttonAddBoat_Click(object sender, EventArgs e)
+        {
+            FormBoatConfig formBoatConfig = new FormBoatConfig();
+            formBoatConfig.AddEvent(AddBoat);
+            formBoatConfig.ShowDialog();
+        }
     }
 }

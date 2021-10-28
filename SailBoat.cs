@@ -103,5 +103,11 @@ namespace WindowsFormsBoat
                 g.FillRectangle(new SolidBrush(SecondaryColor), _startPosX + 25, _startPosY + 10, 65, 20);
             }
         }
+
+        // Смена дополнительного цвета
+        public void SetSecondaryColor(Color color)
+        {
+            SecondaryColor = color;
+        }
     }
 }

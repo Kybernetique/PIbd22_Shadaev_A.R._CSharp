@@ -3,6 +3,8 @@ using System.Windows.Forms;
 
 namespace WindowsFormsBoat
 {
+    public delegate void BoatDelegate(Transport boat);
+
     static class Program
     {
         [STAThread]

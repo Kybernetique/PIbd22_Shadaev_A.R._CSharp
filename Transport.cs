@@ -40,5 +40,10 @@ namespace WindowsFormsBoat
 
         // Изменение направления перемещения
         public abstract void MoveTransport(Direction direction);
+
+        public void SetMainColor(Color color)
+        {
+            MainColor = color;
+        }
     }
 }

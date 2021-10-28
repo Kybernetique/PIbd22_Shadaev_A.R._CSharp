@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.pictureBoxHarbor = new System.Windows.Forms.PictureBox();
-            this.buttonSetBoat = new System.Windows.Forms.Button();
-            this.buttonSetSailboat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonTakeVessel = new System.Windows.Forms.Button();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -40,6 +38,7 @@
             this.textBoxNewLevelName = new System.Windows.Forms.TextBox();
             this.listBoxHarbors = new System.Windows.Forms.ListBox();
             this.Harbors = new System.Windows.Forms.Label();
+            this.buttonAddBoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHarbor)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -52,29 +51,6 @@
             this.pictureBoxHarbor.Size = new System.Drawing.Size(674, 461);
             this.pictureBoxHarbor.TabIndex = 0;
             this.pictureBoxHarbor.TabStop = false;
-            // 
-            // buttonSetBoat
-            // 
-            this.buttonSetBoat.AutoSize = true;
-            this.buttonSetBoat.Location = new System.Drawing.Point(680, 299);
-            this.buttonSetBoat.Name = "buttonSetBoat";
-            this.buttonSetBoat.Size = new System.Drawing.Size(108, 24);
-            this.buttonSetBoat.TabIndex = 1;
-            this.buttonSetBoat.Text = "Set Boat";
-            this.buttonSetBoat.UseCompatibleTextRendering = true;
-            this.buttonSetBoat.UseVisualStyleBackColor = true;
-            this.buttonSetBoat.Click += new System.EventHandler(this.buttonSetBoat_Click_1);
-            // 
-            // buttonSetSailboat
-            // 
-            this.buttonSetSailboat.AutoSize = true;
-            this.buttonSetSailboat.Location = new System.Drawing.Point(680, 329);
-            this.buttonSetSailboat.Name = "buttonSetSailboat";
-            this.buttonSetSailboat.Size = new System.Drawing.Size(108, 24);
-            this.buttonSetSailboat.TabIndex = 2;
-            this.buttonSetSailboat.Text = "Set Sailboat";
-            this.buttonSetSailboat.UseVisualStyleBackColor = true;
-            this.buttonSetSailboat.Click += new System.EventHandler(this.buttonSetSailboat_Click_1);
             // 
             // groupBox1
             // 
@@ -160,19 +136,28 @@
             this.Harbors.TabIndex = 8;
             this.Harbors.Text = "Harbors:";
             // 
+            // buttonAddBoat
+            // 
+            this.buttonAddBoat.Location = new System.Drawing.Point(680, 329);
+            this.buttonAddBoat.Name = "buttonAddBoat";
+            this.buttonAddBoat.Size = new System.Drawing.Size(108, 23);
+            this.buttonAddBoat.TabIndex = 9;
+            this.buttonAddBoat.Text = "Add Boat";
+            this.buttonAddBoat.UseVisualStyleBackColor = true;
+            this.buttonAddBoat.Click += new System.EventHandler(this.buttonAddBoat_Click);
+            // 
             // FormHarbor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 461);
+            this.Controls.Add(this.buttonAddBoat);
             this.Controls.Add(this.Harbors);
             this.Controls.Add(this.listBoxHarbors);
             this.Controls.Add(this.textBoxNewLevelName);
             this.Controls.Add(this.buttonDelHarbor);
             this.Controls.Add(this.buttonAddHarbor);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.buttonSetSailboat);
-            this.Controls.Add(this.buttonSetBoat);
             this.Controls.Add(this.pictureBoxHarbor);
             this.Name = "FormHarbor";
             this.Text = "Harbor";
@@ -187,8 +172,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxHarbor;
-        private System.Windows.Forms.Button buttonSetBoat;
-        private System.Windows.Forms.Button buttonSetSailboat;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonTakeVessel;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
@@ -198,5 +181,6 @@
         private System.Windows.Forms.TextBox textBoxNewLevelName;
         private System.Windows.Forms.ListBox listBoxHarbors;
         private System.Windows.Forms.Label Harbors;
+        private System.Windows.Forms.Button buttonAddBoat;
     }
 }
