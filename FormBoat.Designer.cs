@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBoat));
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
@@ -38,16 +37,6 @@
             this.pictureBoxBoats = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBoats)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(154, 12);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // buttonCreate
             // 
@@ -134,7 +123,6 @@
             this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.pictureBoxBoats);
-            this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormBoat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -146,7 +134,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBoxBoats;
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.Button buttonUp;
