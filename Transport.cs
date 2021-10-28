@@ -4,8 +4,8 @@ using System.Windows.Forms;
 
 namespace WindowsFormsBoat
 {
-    // Абстрактный класс "Судно"
-    public abstract class Vessel : ITransport
+    // Абстрактный класс "Транспорт"
+    public abstract class Transport : ITransport
     {
         // Левая координата отрисовки
         protected float _startPosX;

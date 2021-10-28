@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVessel));
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonCreateBoat = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
@@ -39,15 +38,6 @@
             this.buttonCreateSailboat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBoats)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(103, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // buttonCreateBoat
             // 
@@ -140,7 +130,6 @@
             this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonCreateBoat);
             this.Controls.Add(this.pictureBoxBoats);
-            this.Controls.Add(this.button1);
             this.Name = "FormVessel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vessel";
@@ -151,7 +140,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBoxBoats;
         private System.Windows.Forms.Button buttonCreateBoat;
         private System.Windows.Forms.Button buttonUp;
