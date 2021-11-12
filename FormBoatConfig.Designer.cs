@@ -43,16 +43,16 @@
             this.labelBoat = new System.Windows.Forms.Label();
             this.panelBoat = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelWhiteColor = new System.Windows.Forms.Panel();
             this.labelSecondaryColor = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelPurpleColor = new System.Windows.Forms.Panel();
+            this.panelYellowColor = new System.Windows.Forms.Panel();
+            this.panelGreenColor = new System.Windows.Forms.Panel();
+            this.panelPinkColor = new System.Windows.Forms.Panel();
+            this.panelCyanColor = new System.Windows.Forms.Panel();
             this.labelMainColor = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelOrangeColor = new System.Windows.Forms.Panel();
+            this.panelRedColor = new System.Windows.Forms.Panel();
             this.buttonAppend = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -245,16 +245,16 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.panel1);
+            this.groupBox3.Controls.Add(this.panelWhiteColor);
             this.groupBox3.Controls.Add(this.labelSecondaryColor);
-            this.groupBox3.Controls.Add(this.panel7);
-            this.groupBox3.Controls.Add(this.panel4);
-            this.groupBox3.Controls.Add(this.panel5);
-            this.groupBox3.Controls.Add(this.panel8);
-            this.groupBox3.Controls.Add(this.panel6);
+            this.groupBox3.Controls.Add(this.panelPurpleColor);
+            this.groupBox3.Controls.Add(this.panelYellowColor);
+            this.groupBox3.Controls.Add(this.panelGreenColor);
+            this.groupBox3.Controls.Add(this.panelPinkColor);
+            this.groupBox3.Controls.Add(this.panelCyanColor);
             this.groupBox3.Controls.Add(this.labelMainColor);
-            this.groupBox3.Controls.Add(this.panel3);
-            this.groupBox3.Controls.Add(this.panel2);
+            this.groupBox3.Controls.Add(this.panelOrangeColor);
+            this.groupBox3.Controls.Add(this.panelRedColor);
             this.groupBox3.Location = new System.Drawing.Point(350, 15);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(142, 142);
@@ -262,14 +262,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Colors";
             // 
-            // panel1
+            // panelWhiteColor
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(104, 113);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(25, 25);
-            this.panel1.TabIndex = 2;
+            this.panelWhiteColor.BackColor = System.Drawing.Color.White;
+            this.panelWhiteColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelWhiteColor.Location = new System.Drawing.Point(104, 113);
+            this.panelWhiteColor.Name = "panelWhiteColor";
+            this.panelWhiteColor.Size = new System.Drawing.Size(25, 25);
+            this.panelWhiteColor.TabIndex = 2;
             // 
             // labelSecondaryColor
             // 
@@ -284,50 +284,50 @@
             this.labelSecondaryColor.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelSecondaryColor_DragDrop);
             this.labelSecondaryColor.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelMainColor_DragEnter);
             // 
-            // panel7
+            // panelPurpleColor
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Location = new System.Drawing.Point(73, 113);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(25, 25);
-            this.panel7.TabIndex = 0;
+            this.panelPurpleColor.BackColor = System.Drawing.Color.Purple;
+            this.panelPurpleColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPurpleColor.Location = new System.Drawing.Point(73, 113);
+            this.panelPurpleColor.Name = "panelPurpleColor";
+            this.panelPurpleColor.Size = new System.Drawing.Size(25, 25);
+            this.panelPurpleColor.TabIndex = 0;
             // 
-            // panel4
+            // panelYellowColor
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(11, 82);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(25, 25);
-            this.panel4.TabIndex = 0;
+            this.panelYellowColor.BackColor = System.Drawing.Color.Yellow;
+            this.panelYellowColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelYellowColor.Location = new System.Drawing.Point(11, 82);
+            this.panelYellowColor.Name = "panelYellowColor";
+            this.panelYellowColor.Size = new System.Drawing.Size(25, 25);
+            this.panelYellowColor.TabIndex = 0;
             // 
-            // panel5
+            // panelGreenColor
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Location = new System.Drawing.Point(42, 113);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(25, 25);
-            this.panel5.TabIndex = 0;
+            this.panelGreenColor.BackColor = System.Drawing.Color.Green;
+            this.panelGreenColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGreenColor.Location = new System.Drawing.Point(42, 113);
+            this.panelGreenColor.Name = "panelGreenColor";
+            this.panelGreenColor.Size = new System.Drawing.Size(25, 25);
+            this.panelGreenColor.TabIndex = 0;
             // 
-            // panel8
+            // panelPinkColor
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Location = new System.Drawing.Point(104, 82);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(25, 25);
-            this.panel8.TabIndex = 3;
+            this.panelPinkColor.BackColor = System.Drawing.Color.Pink;
+            this.panelPinkColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPinkColor.Location = new System.Drawing.Point(104, 82);
+            this.panelPinkColor.Name = "panelPinkColor";
+            this.panelPinkColor.Size = new System.Drawing.Size(25, 25);
+            this.panelPinkColor.TabIndex = 3;
             // 
-            // panel6
+            // panelCyanColor
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Location = new System.Drawing.Point(11, 113);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(25, 25);
-            this.panel6.TabIndex = 0;
+            this.panelCyanColor.BackColor = System.Drawing.Color.Cyan;
+            this.panelCyanColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCyanColor.Location = new System.Drawing.Point(11, 113);
+            this.panelCyanColor.Name = "panelCyanColor";
+            this.panelCyanColor.Size = new System.Drawing.Size(25, 25);
+            this.panelCyanColor.TabIndex = 0;
             // 
             // labelMainColor
             // 
@@ -342,23 +342,23 @@
             this.labelMainColor.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelMainColor_DragDrop);
             this.labelMainColor.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelMainColor_DragEnter);
             // 
-            // panel3
+            // panelOrangeColor
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(42, 82);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(25, 25);
-            this.panel3.TabIndex = 0;
+            this.panelOrangeColor.BackColor = System.Drawing.Color.Orange;
+            this.panelOrangeColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelOrangeColor.Location = new System.Drawing.Point(42, 82);
+            this.panelOrangeColor.Name = "panelOrangeColor";
+            this.panelOrangeColor.Size = new System.Drawing.Size(25, 25);
+            this.panelOrangeColor.TabIndex = 0;
             // 
-            // panel2
+            // panelRedColor
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(73, 82);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(25, 25);
-            this.panel2.TabIndex = 0;
+            this.panelRedColor.BackColor = System.Drawing.Color.Red;
+            this.panelRedColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRedColor.Location = new System.Drawing.Point(73, 82);
+            this.panelRedColor.Name = "panelRedColor";
+            this.panelRedColor.Size = new System.Drawing.Size(25, 25);
+            this.panelRedColor.TabIndex = 0;
             // 
             // buttonAppend
             // 
@@ -425,13 +425,13 @@
         private System.Windows.Forms.Label labelSecondaryColor;
         private System.Windows.Forms.Button buttonAppend;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelWhiteColor;
+        private System.Windows.Forms.Panel panelPurpleColor;
+        private System.Windows.Forms.Panel panelYellowColor;
+        private System.Windows.Forms.Panel panelGreenColor;
+        private System.Windows.Forms.Panel panelPinkColor;
+        private System.Windows.Forms.Panel panelCyanColor;
+        private System.Windows.Forms.Panel panelOrangeColor;
+        private System.Windows.Forms.Panel panelRedColor;
     }
 }

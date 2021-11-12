@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace WindowsFormsBoat
 {
@@ -11,12 +12,27 @@ namespace WindowsFormsBoat
         // Высота отрисовки лодки
         private readonly int boatHeight = 40;
 
+        // Разделитель для записи информации по объекту в 
+        protected readonly char separator = ';';
+
         // Конструктор
         public Boat(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
+        }
+
+        // Конструктор для загрузки с файла
+        public Boat(string info)
+        {
+            string[] strs = info.Split(separator);
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
         }
 
         // Конструктор с изменением размеров лодки
@@ -100,6 +116,11 @@ namespace WindowsFormsBoat
             g.FillEllipse(new SolidBrush(MainColor), _startPosX + 80, _startPosY + 10, 20, 20);
             g.FillEllipse(new SolidBrush(MainColor), _startPosX + 10, _startPosY + 10, 20, 20);
             g.FillRectangle(new SolidBrush(MainColor), _startPosX + 25, _startPosY + 10, 65, 20);
+        }
+
+        public override string ToString()
+        {
+            return $"{MaxSpeed}{separator}{Weight}{separator}{MainColor.Name}";
         }
     }
 }

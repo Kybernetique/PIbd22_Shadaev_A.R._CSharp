@@ -17,14 +17,14 @@ namespace WindowsFormsBoat
         {
             InitializeComponent();
             // привязать panelColor_MouseDown к панелям с цветами
-            panel1.MouseDown += panelColor_MouseDown;
-            panel2.MouseDown += panelColor_MouseDown;
-            panel3.MouseDown += panelColor_MouseDown;
-            panel4.MouseDown += panelColor_MouseDown;
-            panel5.MouseDown += panelColor_MouseDown;
-            panel6.MouseDown += panelColor_MouseDown;
-            panel7.MouseDown += panelColor_MouseDown;
-            panel8.MouseDown += panelColor_MouseDown;
+            panelWhiteColor.MouseDown += panelColor_MouseDown;
+            panelRedColor.MouseDown += panelColor_MouseDown;
+            panelOrangeColor.MouseDown += panelColor_MouseDown;
+            panelYellowColor.MouseDown += panelColor_MouseDown;
+            panelGreenColor.MouseDown += panelColor_MouseDown;
+            panelCyanColor.MouseDown += panelColor_MouseDown;
+            panelPurpleColor.MouseDown += panelColor_MouseDown;
+            panelPinkColor.MouseDown += panelColor_MouseDown;
 
             buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
         }

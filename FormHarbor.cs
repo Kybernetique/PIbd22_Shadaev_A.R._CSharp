@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace WindowsFormsBoat
@@ -82,7 +86,7 @@ namespace WindowsFormsBoat
 
         // Обработка нажатия кнопки "Set Boat"
         private void buttonSetBoat_Click_1(object sender, EventArgs e)
-        
+
         {
             ColorDialog dialog = new ColorDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -165,5 +169,39 @@ namespace WindowsFormsBoat
             formBoatConfig.AddEvent(AddBoat);
             formBoatConfig.ShowDialog();
         }
+
+        // Обработка нажатия пункта меню "Save"
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (harborCollection.SaveData(saveFileDialog.FileName))
+                {
+                    MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не сохранилось", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        // Обработка нажатия пункта меню "Load"
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog.ShowDialog() == DialogResult.OK);
+            if (harborCollection.LoadData(openFileDialog.FileName))
+            {
+                MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReloadLevels();
+                Draw();
+            }
+            else
+            {
+                MessageBox.Show("Не загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }
+
