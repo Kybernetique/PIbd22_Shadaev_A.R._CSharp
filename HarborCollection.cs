@@ -81,20 +81,20 @@ namespace WindowsFormsBoat
                 foreach (var level in harborStages)
                 {
                     sw.Write($"Harbor{separator}{level.Key}{Environment.NewLine}");
-                    ITransport plane = null;
-                    for (int i = 0; (plane = level.Value.GetNext(i)) != null; i++)
+                    ITransport boat = null;
+                    for (int i = 0; (boat = level.Value.GetNext(i)) != null; i++)
                     {
-                        if (plane != null)
+                        if (boat != null)
                         {
-                            if (plane.GetType().Name == "Boat")
+                            if (boat.GetType().Name == "Boat")
                             {
                                 sw.Write($"Boat{separator}");
                             }
-                            if (plane.GetType().Name == "SailBoat")
+                            if (boat.GetType().Name == "SailBoat")
                             {
                                 sw.Write($"SailBoat{separator}");
                             }
-                            sw.Write(plane + Environment.NewLine);
+                            sw.Write(boat + Environment.NewLine);
                         }
                     }
                 }
