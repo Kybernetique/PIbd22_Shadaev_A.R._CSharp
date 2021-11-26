@@ -12,11 +12,10 @@ namespace WindowsFormsBoat
         // Событие
         private Action<Transport> eventAddBoat;
 
-
+        // Конструктор
         public FormBoatConfig()
         {
             InitializeComponent();
-            // привязать panelColor_MouseDown к панелям с цветами
             panelWhiteColor.MouseDown += panelColor_MouseDown;
             panelRedColor.MouseDown += panelColor_MouseDown;
             panelOrangeColor.MouseDown += panelColor_MouseDown;
@@ -55,13 +54,13 @@ namespace WindowsFormsBoat
             }
         }
 
-        // Передаём информацию при нажатии на Label
+        // Передаём информацию при нажатии на labelBoat
         private void labelBoat_MouseDown(object sender, MouseEventArgs e)
         {
             labelBoat.DoDragDrop(labelBoat.Text, DragDropEffects.Move | DragDropEffects.Copy);
         }
 
-        // Передаём информацию при нажатии на Label
+        // Передаём информацию при нажатии на labelSailboat
         private void labelSailboat_MouseDown(object sender, MouseEventArgs e)
         {
             labelSailBoat.DoDragDrop(labelSailBoat.Text, DragDropEffects.Move | DragDropEffects.Copy);
@@ -101,7 +100,7 @@ checkBoxFront.Checked, checkBoxBack.Checked, checkBoxAnchor.Checked, checkBoxSai
             (sender as Control).DoDragDrop((sender as Control).BackColor, DragDropEffects.Move | DragDropEffects.Copy);
         }
 
-        // Принимаем основной цвет // ok
+        // Принимаем основной цвет
         private void labelMainColor_DragDrop(object sender, DragEventArgs e)
         {
             if (boat != null)

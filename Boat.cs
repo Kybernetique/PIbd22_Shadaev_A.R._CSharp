@@ -65,7 +65,6 @@ namespace WindowsFormsBoat
                     if (_startPosX - step > 0)
                     {
                         _startPosX -= step;
-
                     }
                     break;
 
@@ -118,6 +117,7 @@ namespace WindowsFormsBoat
             g.FillRectangle(new SolidBrush(MainColor), _startPosX + 25, _startPosY + 10, 65, 20);
         }
 
+        // Перегрузка метода ToString()
         public override string ToString()
         {
             return $"{MaxSpeed}{separator}{Weight}{separator}{MainColor.Name}";

@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxParameters = new System.Windows.Forms.GroupBox();
             this.checkBoxSail = new System.Windows.Forms.CheckBox();
             this.checkBoxAnchor = new System.Windows.Forms.CheckBox();
             this.checkBoxBack = new System.Windows.Forms.CheckBox();
             this.checkBoxFront = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelMaxWeight = new System.Windows.Forms.Label();
             this.numericUpDownWeight = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownMaxSpeed = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelMaxSpeed = new System.Windows.Forms.Label();
             this.pictureBoxBoat = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxBoatType = new System.Windows.Forms.GroupBox();
             this.labelSailBoat = new System.Windows.Forms.Label();
             this.labelBoat = new System.Windows.Forms.Label();
             this.panelBoat = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBoxColors = new System.Windows.Forms.GroupBox();
             this.panelWhiteColor = new System.Windows.Forms.Panel();
             this.labelSecondaryColor = new System.Windows.Forms.Label();
             this.panelPurpleColor = new System.Windows.Forms.Panel();
@@ -55,31 +55,31 @@
             this.panelRedColor = new System.Windows.Forms.Panel();
             this.buttonAppend = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBoat)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxBoatType.SuspendLayout();
             this.panelBoat.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBoxColors.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxParameters
             // 
-            this.groupBox1.Controls.Add(this.checkBoxSail);
-            this.groupBox1.Controls.Add(this.checkBoxAnchor);
-            this.groupBox1.Controls.Add(this.checkBoxBack);
-            this.groupBox1.Controls.Add(this.checkBoxFront);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.numericUpDownWeight);
-            this.groupBox1.Controls.Add(this.numericUpDownMaxSpeed);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 156);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(265, 100);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Parameters";
+            this.groupBoxParameters.Controls.Add(this.checkBoxSail);
+            this.groupBoxParameters.Controls.Add(this.checkBoxAnchor);
+            this.groupBoxParameters.Controls.Add(this.checkBoxBack);
+            this.groupBoxParameters.Controls.Add(this.checkBoxFront);
+            this.groupBoxParameters.Controls.Add(this.labelMaxWeight);
+            this.groupBoxParameters.Controls.Add(this.numericUpDownWeight);
+            this.groupBoxParameters.Controls.Add(this.numericUpDownMaxSpeed);
+            this.groupBoxParameters.Controls.Add(this.labelMaxSpeed);
+            this.groupBoxParameters.Location = new System.Drawing.Point(12, 156);
+            this.groupBoxParameters.Name = "groupBoxParameters";
+            this.groupBoxParameters.Size = new System.Drawing.Size(265, 100);
+            this.groupBoxParameters.TabIndex = 0;
+            this.groupBoxParameters.TabStop = false;
+            this.groupBoxParameters.Text = "Parameters";
             // 
             // checkBoxSail
             // 
@@ -129,14 +129,14 @@
             this.checkBoxFront.Text = "Front";
             this.checkBoxFront.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // labelMaxWeight
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Max Weight:";
+            this.labelMaxWeight.AutoSize = true;
+            this.labelMaxWeight.Location = new System.Drawing.Point(6, 64);
+            this.labelMaxWeight.Name = "labelMaxWeight";
+            this.labelMaxWeight.Size = new System.Drawing.Size(67, 13);
+            this.labelMaxWeight.TabIndex = 1;
+            this.labelMaxWeight.Text = "Max Weight:";
             // 
             // numericUpDownWeight
             // 
@@ -182,14 +182,14 @@
             0,
             0});
             // 
-            // label1
+            // labelMaxSpeed
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Max Speed:";
+            this.labelMaxSpeed.AutoSize = true;
+            this.labelMaxSpeed.Location = new System.Drawing.Point(6, 16);
+            this.labelMaxSpeed.Name = "labelMaxSpeed";
+            this.labelMaxSpeed.Size = new System.Drawing.Size(64, 13);
+            this.labelMaxSpeed.TabIndex = 0;
+            this.labelMaxSpeed.Text = "Max Speed:";
             // 
             // pictureBoxBoat
             // 
@@ -199,16 +199,16 @@
             this.pictureBoxBoat.TabIndex = 1;
             this.pictureBoxBoat.TabStop = false;
             // 
-            // groupBox2
+            // groupBoxBoatType
             // 
-            this.groupBox2.Controls.Add(this.labelSailBoat);
-            this.groupBox2.Controls.Add(this.labelBoat);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(129, 107);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Boat Type";
+            this.groupBoxBoatType.Controls.Add(this.labelSailBoat);
+            this.groupBoxBoatType.Controls.Add(this.labelBoat);
+            this.groupBoxBoatType.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxBoatType.Name = "groupBoxBoatType";
+            this.groupBoxBoatType.Size = new System.Drawing.Size(129, 107);
+            this.groupBoxBoatType.TabIndex = 2;
+            this.groupBoxBoatType.TabStop = false;
+            this.groupBoxBoatType.Text = "Boat Type";
             // 
             // labelSailBoat
             // 
@@ -243,24 +243,24 @@
             this.panelBoat.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelBoat_DragDrop);
             this.panelBoat.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelBoat_DragEnter);
             // 
-            // groupBox3
+            // groupBoxColors
             // 
-            this.groupBox3.Controls.Add(this.panelWhiteColor);
-            this.groupBox3.Controls.Add(this.labelSecondaryColor);
-            this.groupBox3.Controls.Add(this.panelPurpleColor);
-            this.groupBox3.Controls.Add(this.panelYellowColor);
-            this.groupBox3.Controls.Add(this.panelGreenColor);
-            this.groupBox3.Controls.Add(this.panelPinkColor);
-            this.groupBox3.Controls.Add(this.panelCyanColor);
-            this.groupBox3.Controls.Add(this.labelMainColor);
-            this.groupBox3.Controls.Add(this.panelOrangeColor);
-            this.groupBox3.Controls.Add(this.panelRedColor);
-            this.groupBox3.Location = new System.Drawing.Point(350, 15);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(142, 142);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Colors";
+            this.groupBoxColors.Controls.Add(this.panelWhiteColor);
+            this.groupBoxColors.Controls.Add(this.labelSecondaryColor);
+            this.groupBoxColors.Controls.Add(this.panelPurpleColor);
+            this.groupBoxColors.Controls.Add(this.panelYellowColor);
+            this.groupBoxColors.Controls.Add(this.panelGreenColor);
+            this.groupBoxColors.Controls.Add(this.panelPinkColor);
+            this.groupBoxColors.Controls.Add(this.panelCyanColor);
+            this.groupBoxColors.Controls.Add(this.labelMainColor);
+            this.groupBoxColors.Controls.Add(this.panelOrangeColor);
+            this.groupBoxColors.Controls.Add(this.panelRedColor);
+            this.groupBoxColors.Location = new System.Drawing.Point(350, 15);
+            this.groupBoxColors.Name = "groupBoxColors";
+            this.groupBoxColors.Size = new System.Drawing.Size(142, 142);
+            this.groupBoxColors.TabIndex = 2;
+            this.groupBoxColors.TabStop = false;
+            this.groupBoxColors.Text = "Colors";
             // 
             // panelWhiteColor
             // 
@@ -386,29 +386,29 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAppend);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBoxColors);
             this.Controls.Add(this.panelBoat);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxBoatType);
+            this.Controls.Add(this.groupBoxParameters);
             this.Name = "FormBoatConfig";
             this.Text = "FormBoatConfig";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxParameters.ResumeLayout(false);
+            this.groupBoxParameters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBoat)).EndInit();
-            this.groupBox2.ResumeLayout(false);
+            this.groupBoxBoatType.ResumeLayout(false);
             this.panelBoat.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
+            this.groupBoxColors.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBoxParameters;
+        private System.Windows.Forms.Label labelMaxSpeed;
+        private System.Windows.Forms.Label labelMaxWeight;
         private System.Windows.Forms.CheckBox checkBoxSail;
         private System.Windows.Forms.CheckBox checkBoxAnchor;
         private System.Windows.Forms.CheckBox checkBoxBack;
@@ -416,11 +416,11 @@
         private System.Windows.Forms.NumericUpDown numericUpDownWeight;
         private System.Windows.Forms.NumericUpDown numericUpDownMaxSpeed;
         private System.Windows.Forms.PictureBox pictureBoxBoat;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxBoatType;
         private System.Windows.Forms.Label labelSailBoat;
         private System.Windows.Forms.Label labelBoat;
         private System.Windows.Forms.Panel panelBoat;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBoxColors;
         private System.Windows.Forms.Label labelMainColor;
         private System.Windows.Forms.Label labelSecondaryColor;
         private System.Windows.Forms.Button buttonAppend;

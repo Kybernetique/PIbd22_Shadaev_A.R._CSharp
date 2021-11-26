@@ -128,6 +128,7 @@ namespace WindowsFormsBoat
             SecondaryColor = color;
         }
 
+        // Перегрузка метода ToString()
         public override string ToString()
         {
             return $"{base.ToString()}{separator}{SecondaryColor.Name}{separator}{Front}{separator}{Back}{separator}{Anchor}{separator}{Sail}";

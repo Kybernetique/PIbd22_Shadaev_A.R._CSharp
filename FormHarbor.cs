@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Drawing;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using NLog;
 
 namespace WindowsFormsBoat
 {
@@ -13,12 +11,15 @@ namespace WindowsFormsBoat
         // Объект от класса-коллекции гавани
         private readonly HarborCollection harborCollection;
 
+        // Логгер
+        private readonly Logger logger;
+
         // Конструктор
         public FormHarbor()
         {
             InitializeComponent();
             harborCollection = new HarborCollection(pictureBoxHarbor.Width, pictureBoxHarbor.Height);
-            Draw();
+            logger = LogManager.GetCurrentClassLogger();
         }
 
         // Заполнение listBoxLevels
@@ -50,9 +51,10 @@ namespace WindowsFormsBoat
                 // Если выбран один из пуктов в listBox (при старте программы ни один пункт не будет выбран и может возникнуть ошибка, если мы попытаемся обратиться к элементу listBox)
                 Bitmap bmp = new Bitmap(pictureBoxHarbor.Width, pictureBoxHarbor.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                if (listBoxHarbors.SelectedIndex > -1) // added
+                if (listBoxHarbors.SelectedIndex > -1)
+                {
                     harborCollection[listBoxHarbors.SelectedItem.ToString()].Draw(gr);
-
+                }
                 pictureBoxHarbor.Image = bmp;
             }
         }
@@ -65,8 +67,8 @@ namespace WindowsFormsBoat
                 MessageBox.Show("Enter A Harbor's Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            logger.Info($"Added place {textBoxNewLevelName.Text}");
             harborCollection.AddPlace(textBoxNewLevelName.Text);
-
             ReloadLevels();
         }
 
@@ -77,6 +79,7 @@ namespace WindowsFormsBoat
             {
                 if (MessageBox.Show($"Del Harbor {listBoxHarbors.SelectedItem.ToString()}?", "Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    logger.Info($"Place was deleted {listBoxHarbors.SelectedItem.ToString()}");
                     harborCollection.DelPlace(textBoxNewLevelName.Text);
                     ReloadLevels();
                 }
@@ -84,67 +87,39 @@ namespace WindowsFormsBoat
             }
         }
 
-        // Обработка нажатия кнопки "Set Boat"
-        private void buttonSetBoat_Click_1(object sender, EventArgs e)
-
+        // Обработка нажатия кнопки "Take"
+        private void buttonTakeBoat_Click_1(object sender, EventArgs e)
         {
-            ColorDialog dialog = new ColorDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (listBoxHarbors.SelectedIndex > -1 && maskedTextBoxPlace.Text != "")
             {
-                var boat = new Boat(100, 1000, dialog.Color);
-                if (harborCollection[listBoxHarbors.SelectedItem.ToString()] + boat > -1)
+                try
                 {
-                    Draw();
-                }
-                else
-                {
-                    MessageBox.Show("Harbor Is Full!");
-                }
-            }
-        }
-
-        // Обработка нажатия кнопки "Set Sailboat"
-        private void buttonSetSailboat_Click_1(object sender, EventArgs e)
-        {
-            ColorDialog dialog = new ColorDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                ColorDialog dialogDop = new ColorDialog();
-                if (dialogDop.ShowDialog() == DialogResult.OK)
-                {
-                    var boat = new SailBoat(100, 1000, dialog.Color, dialogDop.Color, true, true, true, true);
-                    if (harborCollection[listBoxHarbors.SelectedItem.ToString()] + boat > -1)
+                    var boat = harborCollection[listBoxHarbors.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBoxPlace.Text);
+                    if (boat != null)
                     {
+                        FormBoat form = new FormBoat();
+                        form.SetBoat(boat);
+                        form.ShowDialog();
+                        logger.Info($"Boat {boat} Was Taken From Place {maskedTextBoxPlace.Text}");
                         Draw();
                     }
-                    else
-                    {
-                        MessageBox.Show("Harbor Is Full!");
-                    }
                 }
-            }
-        }
-
-        // Обработка нажатия кнопки "Take"
-        private void buttonTakeVessel_Click_1(object sender, EventArgs e)
-        {
-            if (maskedTextBox.Text != "")
-            {
-
-                var boat = harborCollection[listBoxHarbors.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBox.Text);
-                if (boat != null)
+                catch (HarborNotFoundException ex)
                 {
-                    FormVessel form = new FormVessel();
-                    form.SetBoat(boat);
-                    form.ShowDialog();
+                    logger.Warn($"Harbor {maskedTextBoxPlace.Text} Was Not Found");
+                    MessageBox.Show(ex.Message, "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                Draw();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Unknown Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         // Метод обработки выбора элемента на listBoxLevels
         private void listBoxHarbors_SelectedIndexChanged(object sender, EventArgs e)
         {
+            logger.Info($"Switched To Harbor {listBoxHarbors.SelectedItem.ToString()}");
             Draw();
         }
 
@@ -152,13 +127,27 @@ namespace WindowsFormsBoat
         {
             if (boat != null && listBoxHarbors.SelectedIndex > -1)
             {
-                if ((harborCollection[listBoxHarbors.SelectedItem.ToString()] + boat) > -1)
+                try
                 {
+                    if ((harborCollection[listBoxHarbors.SelectedItem.ToString()]) + boat)
+                    {
+                        Draw();
+                        logger.Info($"Added Boat {boat}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Could Not Add Boat");
+                    }
                     Draw();
                 }
-                else
+                catch (HarborOverflowException ex)
                 {
-                    MessageBox.Show("Harbor is full!");
+                    logger.Warn($"Couldn't Add Boat {boat}");
+                    MessageBox.Show(ex.Message, "Overflow", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Unknown Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -175,13 +164,20 @@ namespace WindowsFormsBoat
         {
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (harborCollection.SaveData(saveFileDialog.FileName))
+                try
                 {
-                    MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    harborCollection.SaveData(saveFileDialog.FileName);
+                    MessageBox.Show("Save Succeeded.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    logger.Info("Saved to File " + saveFileDialog.FileName);
                 }
-                else
+                catch (FileNotFoundException ex)
                 {
-                    MessageBox.Show("Не сохранилось", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logger.Warn("File Was Not Found");
+                    MessageBox.Show(ex.Message, "File Was Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Unknown Error When Saving", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -189,18 +185,27 @@ namespace WindowsFormsBoat
         // Обработка нажатия пункта меню "Load"
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(openFileDialog.ShowDialog() == DialogResult.OK);
-            if (harborCollection.LoadData(openFileDialog.FileName))
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ReloadLevels();
-                Draw();
+                try
+                {
+                    harborCollection.LoadData(openFileDialog.FileName);
+                    MessageBox.Show("Loaded", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    logger.Info("Loaded From File " + openFileDialog.FileName);
+                    ReloadLevels();
+                    Draw();
+                }
+                catch (HarborOverflowException ex)
+                {
+                    logger.Warn($"Couldn't Add Boat");
+                    MessageBox.Show(ex.Message, "Harbor's Overflow", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (FileNotFoundException ex)
+                {
+                    logger.Warn("File Was Not Found");
+                    MessageBox.Show(ex.Message, "File Was Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Не загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
     }
 }

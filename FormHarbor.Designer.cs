@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.pictureBoxHarbor = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonTakeVessel = new System.Windows.Forms.Button();
-            this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.groupBoxTakeBoat = new System.Windows.Forms.GroupBox();
+            this.buttonTakeBoat = new System.Windows.Forms.Button();
+            this.maskedTextBoxPlace = new System.Windows.Forms.MaskedTextBox();
+            this.labelPlace = new System.Windows.Forms.Label();
             this.buttonAddHarbor = new System.Windows.Forms.Button();
             this.buttonDelHarbor = new System.Windows.Forms.Button();
             this.textBoxNewLevelName = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHarbor)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxTakeBoat.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,44 +59,44 @@
             this.pictureBoxHarbor.TabIndex = 0;
             this.pictureBoxHarbor.TabStop = false;
             // 
-            // groupBox1
+            // groupBoxTakeBoat
             // 
-            this.groupBox1.Controls.Add(this.buttonTakeVessel);
-            this.groupBox1.Controls.Add(this.maskedTextBox);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(680, 358);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(108, 80);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Take Vessel";
+            this.groupBoxTakeBoat.Controls.Add(this.buttonTakeBoat);
+            this.groupBoxTakeBoat.Controls.Add(this.maskedTextBoxPlace);
+            this.groupBoxTakeBoat.Controls.Add(this.labelPlace);
+            this.groupBoxTakeBoat.Location = new System.Drawing.Point(680, 358);
+            this.groupBoxTakeBoat.Name = "groupBoxTakeBoat";
+            this.groupBoxTakeBoat.Size = new System.Drawing.Size(108, 80);
+            this.groupBoxTakeBoat.TabIndex = 3;
+            this.groupBoxTakeBoat.TabStop = false;
+            this.groupBoxTakeBoat.Text = "Take Boat";
             // 
-            // buttonTakeVessel
+            // buttonTakeBoat
             // 
-            this.buttonTakeVessel.AutoSize = true;
-            this.buttonTakeVessel.Location = new System.Drawing.Point(9, 43);
-            this.buttonTakeVessel.Name = "buttonTakeVessel";
-            this.buttonTakeVessel.Size = new System.Drawing.Size(93, 30);
-            this.buttonTakeVessel.TabIndex = 2;
-            this.buttonTakeVessel.Text = "Take";
-            this.buttonTakeVessel.UseVisualStyleBackColor = true;
-            this.buttonTakeVessel.Click += new System.EventHandler(this.buttonTakeVessel_Click_1);
+            this.buttonTakeBoat.AutoSize = true;
+            this.buttonTakeBoat.Location = new System.Drawing.Point(9, 43);
+            this.buttonTakeBoat.Name = "buttonTakeBoat";
+            this.buttonTakeBoat.Size = new System.Drawing.Size(93, 30);
+            this.buttonTakeBoat.TabIndex = 2;
+            this.buttonTakeBoat.Text = "Take";
+            this.buttonTakeBoat.UseVisualStyleBackColor = true;
+            this.buttonTakeBoat.Click += new System.EventHandler(this.buttonTakeBoat_Click_1);
             // 
-            // maskedTextBox
+            // maskedTextBoxPlace
             // 
-            this.maskedTextBox.Location = new System.Drawing.Point(46, 17);
-            this.maskedTextBox.Name = "maskedTextBox";
-            this.maskedTextBox.Size = new System.Drawing.Size(53, 20);
-            this.maskedTextBox.TabIndex = 1;
+            this.maskedTextBoxPlace.Location = new System.Drawing.Point(46, 17);
+            this.maskedTextBoxPlace.Name = "maskedTextBoxPlace";
+            this.maskedTextBoxPlace.Size = new System.Drawing.Size(53, 20);
+            this.maskedTextBoxPlace.TabIndex = 1;
             // 
-            // label1
+            // labelPlace
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Place:";
+            this.labelPlace.AutoSize = true;
+            this.labelPlace.Location = new System.Drawing.Point(6, 20);
+            this.labelPlace.Name = "labelPlace";
+            this.labelPlace.Size = new System.Drawing.Size(37, 13);
+            this.labelPlace.TabIndex = 0;
+            this.labelPlace.Text = "Place:";
             // 
             // buttonAddHarbor
             // 
@@ -175,14 +175,14 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
@@ -205,15 +205,15 @@
             this.Controls.Add(this.textBoxNewLevelName);
             this.Controls.Add(this.buttonDelHarbor);
             this.Controls.Add(this.buttonAddHarbor);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxTakeBoat);
             this.Controls.Add(this.pictureBoxHarbor);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FormHarbor";
             this.Text = "Harbor";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHarbor)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxTakeBoat.ResumeLayout(false);
+            this.groupBoxTakeBoat.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -224,10 +224,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxHarbor;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonTakeVessel;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBoxTakeBoat;
+        private System.Windows.Forms.Button buttonTakeBoat;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxPlace;
+        private System.Windows.Forms.Label labelPlace;
         private System.Windows.Forms.Button buttonAddHarbor;
         private System.Windows.Forms.Button buttonDelHarbor;
         private System.Windows.Forms.TextBox textBoxNewLevelName;

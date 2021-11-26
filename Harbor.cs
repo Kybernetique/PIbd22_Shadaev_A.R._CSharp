@@ -1,11 +1,5 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Collections.Generic;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace WindowsFormsBoat
 {
@@ -44,28 +38,27 @@ namespace WindowsFormsBoat
 
         // Перегрузка оператора сложения
         // Логика действия: на место добавляется судно
-        public static int operator +(Harbor<T> p, T vessel)
+        public static bool operator +(Harbor<T> p, T vessel)
         {
-            if (p._places.Count < p._maxCount)
+            if (p._places.Count >= p._maxCount)
             {
-                p._places.Add(vessel);
-                return 1;
+                throw new HarborOverflowException();
             }
-            return -1;
+            p._places.Add(vessel);
+            return true;
         }
 
         // Перегрузка оператора вычитания
         // Логика действия: с места забираем судно
         public static T operator -(Harbor<T> p, int index)
         {
-            if (index >= p._places.Count || index < 0) return null;
-            if (p._places[index] != null)
+            if (index < -1 || index > p._places.Count)
             {
-                T boat = p._places[index];
-                p._places.RemoveAt(index);
-                return boat;
+                throw new HarborNotFoundException(index);
             }
-            return null;
+            T boat = p._places[index];
+            p._places.RemoveAt(index);
+            return boat;
         }
 
         // Метод отрисовки гавани
