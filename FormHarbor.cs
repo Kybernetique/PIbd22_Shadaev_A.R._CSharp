@@ -123,7 +123,7 @@ namespace WindowsFormsBoat
             Draw();
         }
 
-        private void AddBoat(Transport boat)
+        private void AddBoat(Vehicle boat)
         {
             if (boat != null && listBoxHarbors.SelectedIndex > -1)
             {

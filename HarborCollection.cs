@@ -11,7 +11,7 @@ namespace WindowsFormsBoat
     class HarborCollection
     {
         // Словарь (хранилище) с местами гавани
-        readonly Dictionary<string, Harbor<Transport>> harborStages;
+        readonly Dictionary<string, Harbor<Vehicle>> harborStages;
 
         // Возвращение списка названий мест гаваней
         public List<string> Keys => harborStages.Keys.ToList();
@@ -30,7 +30,7 @@ namespace WindowsFormsBoat
         // Конструктор
         public HarborCollection(int pictureWidth, int pictureHeight)
         {
-            harborStages = new Dictionary<string, Harbor<Transport>>();
+            harborStages = new Dictionary<string, Harbor<Vehicle>>();
             this.pictureWidth = pictureWidth;
             this.pictureHeight = pictureHeight;
             logger = LogManager.GetCurrentClassLogger();
@@ -41,7 +41,7 @@ namespace WindowsFormsBoat
         {
             if (!harborStages.ContainsKey(name))
             {
-                harborStages.Add(name, new Harbor<Transport>(pictureWidth, pictureHeight));
+                harborStages.Add(name, new Harbor<Vehicle>(pictureWidth, pictureHeight));
             }
         }
 
@@ -55,7 +55,7 @@ namespace WindowsFormsBoat
         }
 
         // Доступ к парковке
-        public Harbor<Transport> this[string ind]
+        public Harbor<Vehicle> this[string ind]
         {
             get
             {
@@ -122,7 +122,7 @@ namespace WindowsFormsBoat
                 throw new ArgumentException();
             }
 
-            Transport boat = null;
+            Vehicle boat = null;
             string key = string.Empty;
 
             while ((line = sr.ReadLine()) != null)
@@ -130,7 +130,7 @@ namespace WindowsFormsBoat
                 if (line.Contains("Harbor"))
                 {
                     key = line.Split(separator)[1];
-                    harborStages.Add(key, new Harbor<Transport>(pictureWidth, pictureHeight));
+                    harborStages.Add(key, new Harbor<Vehicle>(pictureWidth, pictureHeight));
                     continue;
                 }
                 if (string.IsNullOrEmpty(line))

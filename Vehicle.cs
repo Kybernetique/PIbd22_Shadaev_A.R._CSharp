@@ -3,7 +3,7 @@
 namespace WindowsFormsBoat
 {
     // Абстрактный класс "Транспорт"
-    public abstract class Transport : ITransport
+    public abstract class Vehicle : ITransport
     { 
         // Левая координата отрисовки 
         protected float _startPosX;

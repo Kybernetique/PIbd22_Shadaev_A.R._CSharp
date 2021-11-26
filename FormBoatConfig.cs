@@ -10,7 +10,7 @@ namespace WindowsFormsBoat
         ITransport boat = null;
 
         // Событие
-        private Action<Transport> eventAddBoat;
+        private Action<Vehicle> eventAddBoat;
 
         // Конструктор
         public FormBoatConfig()
@@ -42,11 +42,11 @@ namespace WindowsFormsBoat
         }
 
         // Добавление события
-        public void AddEvent(Action<Transport> ev)
+        public void AddEvent(Action<Vehicle> ev)
         {
             if (eventAddBoat == null)
             {
-                eventAddBoat = new Action<Transport>(ev);
+                eventAddBoat = new Action<Vehicle>(ev);
             }
             else
             {
@@ -140,7 +140,7 @@ checkBoxFront.Checked, checkBoxBack.Checked, checkBoxAnchor.Checked, checkBoxSai
         // Добавление лодки
         private void buttonAppend_Click(object sender, EventArgs e)
         {
-            eventAddBoat?.Invoke((Transport)boat);
+            eventAddBoat?.Invoke((Vehicle)boat);
             Close();
         }
     }

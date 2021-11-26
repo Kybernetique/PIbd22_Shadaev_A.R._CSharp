@@ -4,7 +4,7 @@ using System.Drawing;
 namespace WindowsFormsBoat
 {
     // Класс "Лодка"
-    public class Boat : Transport
+    public class Boat : Vehicle
     {
         // Ширина отрисовки лодки
         protected readonly int boatWidth = 200;
