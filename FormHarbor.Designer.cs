@@ -203,6 +203,7 @@
             this.buttonSort.TabIndex = 11;
             this.buttonSort.Text = "Sort";
             this.buttonSort.UseVisualStyleBackColor = true;
+            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click_1);
             // 
             // FormHarbor
             // 

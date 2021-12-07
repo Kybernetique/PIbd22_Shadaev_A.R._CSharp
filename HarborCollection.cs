@@ -74,10 +74,6 @@ namespace WindowsFormsBoat
             {
                 File.Delete(filename);
             }
-            else
-            {
-                throw new FileNotFoundException();
-            }
             using (StreamWriter sw = new StreamWriter(filename))
             {
                 sw.Write($"HarborCollection{Environment.NewLine}", sw);

@@ -213,7 +213,7 @@ namespace WindowsFormsBoat
         }
 
         // Обработка нажатия кнопки "Sort"
-        private void buttonSort_Click(object sender, EventArgs e)
+        private void buttonSort_Click_1(object sender, EventArgs e)
         {
             if (listBoxHarbors.SelectedIndex > -1)
             {
