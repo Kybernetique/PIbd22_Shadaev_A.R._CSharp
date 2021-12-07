@@ -1,10 +1,11 @@
 ﻿using System.Drawing;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace WindowsFormsBoat
 {
     // Класс "Гавань"
-    public class Harbor<T>
+    public class Harbor<T> : IEnumerator<T>, IEnumerable<T>
         where T : class, ITransport
     {
         // Массив объектов, которые храним
@@ -25,6 +26,13 @@ namespace WindowsFormsBoat
         // Размер места гавани (высота)
         private readonly int _placeSizeHeight = 80;
 
+        // Текущий элемент для вывода через IEnumerator (будет обращаться по своему индексу к ключу словаря, по которму будет возвращаться запись)
+        private int currentIndex;
+
+        public T Current => _places[currentIndex];
+
+        object IEnumerator.Current => _places[currentIndex];
+
         // Конструктор
         public Harbor(int picWidth, int picHeight)
         {
@@ -38,13 +46,17 @@ namespace WindowsFormsBoat
 
         // Перегрузка оператора сложения
         // Логика действия: на место добавляется судно
-        public static bool operator +(Harbor<T> p, T vessel)
+        public static bool operator +(Harbor<T> p, T boat)
         {
             if (p._places.Count >= p._maxCount)
             {
                 throw new HarborOverflowException();
             }
-            p._places.Add(vessel);
+            if (p._places.Contains(boat))
+            {
+                throw new HarborAlreadyHaveException();
+            }
+            p._places.Add(boat);
             return true;
         }
 
@@ -95,6 +107,43 @@ namespace WindowsFormsBoat
                 return null;
             }
             return _places[index];
+        }
+
+        // Сортировка лодок на парковке
+        public void Sort() => _places.Sort((IComparer<T>)new BoatComparer());
+
+        // Метод интерфейса IEnumerator, вызываемый при удалении объекта
+        public void Dispose()
+        {
+        }
+
+        // Метод интерфейса IEnumerator для перехода к следующему элементу или началу коллекции
+        public bool MoveNext()
+        {
+            if (currentIndex < _places.Count - 1)
+            {
+                currentIndex++;
+                return true;
+            }
+            return false;
+        }
+
+        // Метод интерфейса IEnumerator для сброса и возврата к началу коллекции
+        public void Reset()
+        {
+            currentIndex = -1;
+        }
+
+        // Метод интерфейса IEnumerable
+        public IEnumerator<T> GetEnumerator()
+        {
+            return this;
+        }
+
+        // Метод интерфейса IEnumerable
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this;
         }
     }
 }

@@ -145,6 +145,10 @@ namespace WindowsFormsBoat
                     logger.Warn($"Couldn't Add Boat {boat}");
                     MessageBox.Show(ex.Message, "Overflow", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                catch (HarborAlreadyHaveException ex)
+                {
+                    MessageBox.Show(ex.Message, "Dublicate", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Unknown Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -205,6 +209,17 @@ namespace WindowsFormsBoat
                     logger.Warn("File Was Not Found");
                     MessageBox.Show(ex.Message, "File Was Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        // Обработка нажатия кнопки "Sort"
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            if (listBoxHarbors.SelectedIndex > -1)
+            {
+                harborCollection[listBoxHarbors.SelectedItem.ToString()].Sort();
+                Draw();
+                logger.Info("Levels Sorting");
             }
         }
     }

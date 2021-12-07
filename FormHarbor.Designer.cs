@@ -45,6 +45,7 @@
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.buttonSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHarbor)).BeginInit();
             this.groupBoxTakeBoat.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -194,11 +195,21 @@
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
+            // buttonSort
+            // 
+            this.buttonSort.Location = new System.Drawing.Point(680, 245);
+            this.buttonSort.Name = "buttonSort";
+            this.buttonSort.Size = new System.Drawing.Size(108, 27);
+            this.buttonSort.TabIndex = 11;
+            this.buttonSort.Text = "Sort";
+            this.buttonSort.UseVisualStyleBackColor = true;
+            // 
             // FormHarbor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 461);
+            this.Controls.Add(this.buttonSort);
             this.Controls.Add(this.buttonAddBoat);
             this.Controls.Add(this.Harbors);
             this.Controls.Add(this.listBoxHarbors);
@@ -240,5 +251,6 @@
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Button buttonSort;
     }
 }

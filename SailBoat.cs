@@ -4,7 +4,7 @@ using System.Drawing;
 namespace WindowsFormsBoat
 {
     // Класс "Парусник"
-    public class SailBoat : Boat
+    public class SailBoat : Boat, IEquatable<SailBoat>
     {
         // Дополнительный цвет
         public Color SecondaryColor { private set; get; }
@@ -133,5 +133,48 @@ namespace WindowsFormsBoat
         {
             return $"{base.ToString()}{separator}{SecondaryColor.Name}{separator}{Front}{separator}{Back}{separator}{Anchor}{separator}{Sail}";
         }
+
+        public bool Equals(SailBoat other)
+        {
+            if (!base.Equals((Boat)other))
+            {
+                return false;
+            }
+            else if (Front != other.Front)
+            {
+                return false;
+            }
+            else if (Back != other.Back)
+            {
+                return false;
+            }
+            else if (Anchor != other.Anchor)
+            {
+                return false;
+            }
+            else if (Sail != other.Sail)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is SailBoat boatObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(boatObj);
+            }
+        }
+
     }
 }
