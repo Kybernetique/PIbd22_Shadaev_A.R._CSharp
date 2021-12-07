@@ -76,28 +76,30 @@ namespace WindowsFormsBoat
             }
             using (StreamWriter sw = new StreamWriter(filename))
             {
-                sw.Write($"HarborCollection{Environment.NewLine}", sw);
+                sw.Write($"HarborsCollection{Environment.NewLine}", sw);
+
                 foreach (var level in harborStages)
                 {
+                    //Начинаем парковку
                     sw.Write($"Harbor{separator}{level.Key}{Environment.NewLine}", sw);
                     foreach (ITransport boat in level.Value)
                     {
-                        if (boat != null)
+                        //Записываем тип мшаины
+                        if (boat.GetType().Name == "Boat")
                         {
-                            if (boat.GetType().Name == "Boat")
-                            {
-                                sw.Write($"Boat{separator}", sw);
-                            }
-                            if (boat.GetType().Name == "SailBoat")
-                            {
-                                sw.Write($"SailBoat{separator}", sw);
-                            }
-                            sw.Write(boat + Environment.NewLine, sw);
+                            sw.Write($"Boat{separator}", sw);
                         }
+                        if (boat.GetType().Name == "SailBoat")
+                        {
+                            sw.Write($"SailBoat{separator}", sw);
+                        }
+                        //Записываемые параметры
+                        sw.Write(boat + Environment.NewLine, sw);
                     }
                 }
             }
         }
+
 
         // Загрузка информации по лодкам в гавани из файла
         public void LoadData(string filename)
@@ -142,12 +144,13 @@ namespace WindowsFormsBoat
                 {
                     boat = new SailBoat(line.Split(separator)[1]);
                 }
-                else
+                if ((harborStages[key] + boat) == false)
                 {
-                    continue;
+                    throw new TypeLoadException("Couldn't add boat to harbor");
                 }
             }
         }
     }
 }
+
 

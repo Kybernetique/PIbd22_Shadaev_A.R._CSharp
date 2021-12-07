@@ -75,7 +75,6 @@ namespace WindowsFormsBoat
             if (x.Sail != y.Sail)
             {
                 return x.Sail.CompareTo(y.Sail);
-
             }
             return 0;
         }
