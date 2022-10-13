@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace WindowsFormsBoat
 {
@@ -29,6 +30,23 @@ namespace WindowsFormsBoat
             Back = back;
             Anchor = anchor;
             Sail = sail;
+        }
+
+        // Конструктор для загрузки с файла
+        public SailBoat(string info) : base(info)
+        {
+            string[] strs = info.Split(separator);
+            if (strs.Length == 8)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                SecondaryColor = Color.FromName(strs[3]);
+                Front = Convert.ToBoolean(strs[4]);
+                Back = Convert.ToBoolean(strs[5]);
+                Anchor = Convert.ToBoolean(strs[6]);
+                Sail = Convert.ToBoolean(strs[7]);
+            }
         }
 
         // Отрисовка парусника
@@ -108,6 +126,11 @@ namespace WindowsFormsBoat
         public void SetSecondaryColor(Color color)
         {
             SecondaryColor = color;
+        }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}{separator}{SecondaryColor.Name}{separator}{Front}{separator}{Back}{separator}{Anchor}{separator}{Sail}";
         }
     }
 }

@@ -39,16 +39,23 @@
             this.listBoxHarbors = new System.Windows.Forms.ListBox();
             this.Harbors = new System.Windows.Forms.Label();
             this.buttonAddBoat = new System.Windows.Forms.Button();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHarbor)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxHarbor
             // 
             this.pictureBoxHarbor.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxHarbor.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxHarbor.Location = new System.Drawing.Point(0, 24);
             this.pictureBoxHarbor.Name = "pictureBoxHarbor";
-            this.pictureBoxHarbor.Size = new System.Drawing.Size(674, 461);
+            this.pictureBoxHarbor.Size = new System.Drawing.Size(674, 437);
             this.pictureBoxHarbor.TabIndex = 0;
             this.pictureBoxHarbor.TabStop = false;
             // 
@@ -146,6 +153,47 @@
             this.buttonAddBoat.UseVisualStyleBackColor = true;
             this.buttonAddBoat.Click += new System.EventHandler(this.buttonAddBoat_Click);
             // 
+            // menuStrip
+            // 
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(804, 24);
+            this.menuStrip.TabIndex = 10;
+            this.menuStrip.Text = "menuStrip";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.loadToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.Filter = "txt file | *.txt";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            // 
             // FormHarbor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,11 +207,15 @@
             this.Controls.Add(this.buttonAddHarbor);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxHarbor);
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "FormHarbor";
             this.Text = "Harbor";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHarbor)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +234,11 @@
         private System.Windows.Forms.ListBox listBoxHarbors;
         private System.Windows.Forms.Label Harbors;
         private System.Windows.Forms.Button buttonAddBoat;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
