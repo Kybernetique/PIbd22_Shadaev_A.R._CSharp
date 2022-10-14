@@ -33,8 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.4.7.12\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,23 +69,25 @@
     </Compile>
     <Compile Include="Harbor.cs" />
     <Compile Include="HarborCollection.cs" />
+    <Compile Include="HarborNotFoundException.cs" />
+    <Compile Include="HarborOverflowException.cs" />
     <Compile Include="SailBoat.cs" />
     <Compile Include="Direction.cs" />
-    <Compile Include="FormVessel.cs">
+    <Compile Include="FormBoat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormVessel.Designer.cs">
-      <DependentUpon>FormVessel.cs</DependentUpon>
+    <Compile Include="FormBoat.Designer.cs">
+      <DependentUpon>FormBoat.cs</DependentUpon>
     </Compile>
     <Compile Include="ITransport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Transport.cs" />
+    <Compile Include="Vehicle.cs" />
     <EmbeddedResource Include="FormBoatConfig.resx">
       <DependentUpon>FormBoatConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormVessel.resx">
-      <DependentUpon>FormVessel.cs</DependentUpon>
+    <EmbeddedResource Include="FormBoat.resx">
+      <DependentUpon>FormBoat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHarbor.resx">
       <DependentUpon>FormHarbor.cs</DependentUpon>
@@ -92,6 +102,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -4,24 +4,24 @@ using System.Windows.Forms;
 
 namespace WindowsFormsBoat
 {
-    public partial class FormVessel : Form
+    public partial class FormBoat : Form
     {
         private ITransport boat;
 
         // Конструктор
-        public FormVessel()
+        public FormBoat()
         {
             InitializeComponent();
         }
 
-        // Передача корабля на форму
+        // Передача лодки на форму
         public void SetBoat(ITransport boat)
         {
             this.boat = boat;
             Draw();
         }
 
-        // Метод отрисовки корабля
+        // Метод отрисовки лодки
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxBoats.Width, pictureBoxBoats.Height);
@@ -35,15 +35,14 @@ namespace WindowsFormsBoat
         {
             Random rnd = new Random();
             boat = new Boat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Khaki);
-            //boat.Init(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Khaki, Color.DeepSkyBlue, true, true, true, true);
             boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxBoats.Width, pictureBoxBoats.Height);
             Draw();
         }
 
-        // Кнопка движения корабля
+        // Кнопка движения лодки
         private void buttonMove_Click(object sender, EventArgs e)
         {
-            // получаем имя кнопки
+            // Получаем имя кнопки
             string name = (sender as Button).Name;
             switch (name)
             {
