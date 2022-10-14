@@ -67,40 +67,39 @@ namespace WindowsFormsBoat
             }
         }
 
-        // Сохранение информации по автомобилям на парковках в файл
+        // Сохранение информации по лодкам на парковках в файл
         public void SaveData(string filename)
         {
             if (File.Exists(filename))
             {
                 File.Delete(filename);
             }
-            using (FileStream fs = new FileStream(filename, FileMode.Create))
+            using (StreamWriter sw = new StreamWriter(filename))
             {
-                StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
-                sw.Write($"HarborsCollection{Environment.NewLine}");
+                sw.Write($"HarborsCollection{Environment.NewLine}", sw);
+
                 foreach (var level in harborStages)
                 {
-                    sw.Write($"Harbor{separator}{level.Key}{Environment.NewLine}");
-                    ITransport boat = null;
-                    for (int i = 0; (boat = level.Value.GetNext(i)) != null; i++)
+                    //Начинаем парковку
+                    sw.Write($"Harbor{separator}{level.Key}{Environment.NewLine}", sw);
+                    foreach (ITransport boat in level.Value)
                     {
-                        if (boat != null)
+                        //Записываем тип мшаины
+                        if (boat.GetType().Name == "Boat")
                         {
-                            if (boat.GetType().Name == "Boat")
-                            {
-                                sw.Write($"Boat{separator}");
-                            }
-                            if (boat.GetType().Name == "SailBoat")
-                            {
-                                sw.Write($"SailBoat{separator}");
-                            }
-                            sw.Write(boat + Environment.NewLine);
+                            sw.Write($"Boat{separator}", sw);
                         }
+                        if (boat.GetType().Name == "SailBoat")
+                        {
+                            sw.Write($"SailBoat{separator}", sw);
+                        }
+                        //Записываемые параметры
+                        sw.Write(boat + Environment.NewLine, sw);
                     }
                 }
-                sw.Close();
             }
         }
+
 
         // Загрузка информации по лодкам в гавани из файла
         public void LoadData(string filename)
@@ -145,13 +144,13 @@ namespace WindowsFormsBoat
                 {
                     boat = new SailBoat(line.Split(separator)[1]);
                 }
-                var result = harborStages[key] + boat;
-                if (result == false)
+                if ((harborStages[key] + boat) == false)
                 {
-                    throw new HarborOverflowException();
+                    throw new TypeLoadException("Couldn't add boat to harbor");
                 }
             }
         }
     }
 }
+
 
